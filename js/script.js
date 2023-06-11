@@ -19,10 +19,3 @@ function openDropDown() {
 function closeDropDown() {
     document.getElementById("onClickNavId").style.display = "none";
 }
-
-// %%%%%%%%%%%%%%%%% TO SHOW PLAY BTN %%%%%%%%%%%%%%%%%
-// const cardEle = document.getElementsByClassName("card")
-// const playBtnEle = document.getElementsByClassName("play-btn")
-// cardEle.addEventListener("click",()=>{
-//     playBtnEle.classList.toggle("play-btn-show")
-// })
