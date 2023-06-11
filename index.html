@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="icon"
+        href="https://th.bing.com/th/id/R.f7ce343ed66e80d60e87479d2c6753c3?rik=mZlpLMbwFr3BQg&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fspotify-logo-png-open-2000.png&ehk=ZCBP9f2uKAkYi2gLrP%2fkO3Tjpcf49Bki%2fwcRu4kBXb0%3d&risl=&pid=ImgRaw&r=0">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Java Script -->
+    <script src="js/script.js"></script>
+
+    <!-- %%% For Scrollbar %%% -->
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.min.css">
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+
+</head>
+
+<body>
+    <!-- ******************* FIXED FOOTER **************** -->
+    <div class="fixed-footer-container">
+        <div class="fixed-footer">
+            <div class="footer-desc">
+                <span class="first-para">
+                    <p>
+                        PREVIEW OF SPOTIFY
+                    </p>
+                </span>
+                
+                <span class="second-para">
+                    <p>
+                        Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.
+                    </p>
+                </span>
+                
+            </div>
+
+            <button class="footer-sign-up-btn">
+                Sign up free
+            </button>
+        </div>
+    </div>
+
+    <div class="main">
+        <!-- **************LEFT PANEL************** -->
+        <div class="left-panel-container">
+            <div class="left-panel-sec-container">
+                <div class="left-panel" id="left-panel-id">
+                    <div class="logo text-white">
+                        <a href="#" draggable="false" class="logo-link">
+                            <svg viewBox="0 0 1134 340" class="logo-img">
+                                <title>Spotify</title>
+                                <path fill="white"
+                                    d="M8 171c0 92 76 168 168 168s168-76 168-168S268 4 176 4 8 79 8 171zm230 78c-39-24-89-30-147-17-14 2-16-18-4-20 64-15 118-8 162 19 11 7 0 24-11 18zm17-45c-45-28-114-36-167-20-17 5-23-21-7-25 61-18 136-9 188 23 14 9 0 31-14 22zM80 133c-17 6-28-23-9-30 59-18 159-15 221 22 17 9 1 37-17 27-54-32-144-35-195-19zm379 91c-17 0-33-6-47-20-1 0-1 1-1 1l-16 19c-1 1-1 2 0 3 18 16 40 24 64 24 34 0 55-19 55-47 0-24-15-37-50-46-29-7-34-12-34-22s10-16 23-16 25 5 39 15c0 0 1 1 2 1s1-1 1-1l14-20c1-1 1-1 0-2-16-13-35-20-56-20-31 0-53 19-53 46 0 29 20 38 52 46 28 6 32 12 32 22 0 11-10 17-25 17zm95-77v-13c0-1-1-2-2-2h-26c-1 0-2 1-2 2v147c0 1 1 2 2 2h26c1 0 2-1 2-2v-46c10 11 21 16 36 16 27 0 54-21 54-61s-27-60-54-60c-15 0-26 5-36 17zm30 78c-18 0-31-15-31-35s13-34 31-34 30 14 30 34-12 35-30 35zm68-34c0 34 27 60 62 60s62-27 62-61-26-60-61-60-63 27-63 61zm30-1c0-20 13-34 32-34s33 15 33 35-13 34-32 34-33-15-33-35zm140-58v-29c0-1 0-2-1-2h-26c-1 0-2 1-2 2v29h-13c-1 0-2 1-2 2v22c0 1 1 2 2 2h13v58c0 23 11 35 34 35 9 0 18-2 25-6 1 0 1-1 1-2v-21c0-1 0-2-1-2h-2c-5 3-11 4-16 4-8 0-12-4-12-12v-54h30c1 0 2-1 2-2v-22c0-1-1-2-2-2h-30zm129-3c0-11 4-15 13-15 5 0 10 0 15 2h1s1-1 1-2V93c0-1 0-2-1-2-5-2-12-3-22-3-24 0-36 14-36 39v5h-13c-1 0-2 1-2 2v22c0 1 1 2 2 2h13v89c0 1 1 2 2 2h26c1 0 1-1 1-2v-89h25l37 89c-4 9-8 11-14 11-5 0-10-1-15-4h-1l-1 1-9 19c0 1 0 3 1 3 9 5 17 7 27 7 19 0 30-9 39-33l45-116v-2c0-1-1-1-2-1h-27c-1 0-1 1-1 2l-28 78-30-78c0-1-1-2-2-2h-44v-3zm-83 3c-1 0-2 1-2 2v113c0 1 1 2 2 2h26c1 0 1-1 1-2V134c0-1 0-2-1-2h-26zm-6-33c0 10 9 19 19 19s18-9 18-19-8-18-18-18-19 8-19 18zm245 69c10 0 19-8 19-18s-9-18-19-18-18 8-18 18 8 18 18 18zm0-34c9 0 17 7 17 16s-8 16-17 16-16-7-16-16 7-16 16-16zm4 18c3-1 5-3 5-6 0-4-4-6-8-6h-8v19h4v-6h4l4 6h5zm-3-9c2 0 4 1 4 3s-2 3-4 3h-4v-6h4z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="panel-items-container">
+                        <div class="panel-items-1">
+                            <ul>
+                                <li>
+                                    <a href="#" draggable="false">
+                                        <svg role="img" height="24" width="24" aria-hidden="true"
+                                            class="icon-color home-active-icon" viewBox="0 0 24 24"
+                                            data-encore-id="icon">
+                                            <path fill="#FFF"
+                                                d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732l-7.5-4.33z">
+                                            </path>
+                                        </svg>
+                                        <span class="item-name" style="color: #FFF;">Home</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" draggable="false">
+                                        <svg role="img" height="24" width="24" aria-hidden="true"
+                                            class="search-icon icon-color" viewBox="0 0 24 24" data-encore-id="icon">
+                                            <path
+                                                d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z">
+                                            </path>
+                                        </svg>
+                                        <span class="item-name">Search</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" draggable="false">
+                                        <svg role="img" height="24" width="24" aria-hidden="true"
+                                            class="icon-color  collection-icon" viewBox="0 0 24 24"
+                                            data-encore-id="icon">
+                                            <path
+                                                d="M14.5 2.134a1 1 0 0 1 1 0l6 3.464a1 1 0 0 1 .5.866V21a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V3a1 1 0 0 1 .5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zm6 0a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1z">
+                                            </path>
+                                        </svg>
+                                        <span class="item-name">Your Library</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="panel-items-2">
+                            <div class="playlist-liked">
+                                <div class="playlist">
+                                    <button class="playlist-btn">
+                                        <div class="plus-icon">
+                                            <svg role="img" height="12" width="12" aria-hidden="true"
+                                                viewBox="0 0 16 16" data-encore-id="icon" class="plusIcon">
+                                                <path fill="#000"
+                                                    d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <span class="item-name panel-2-names">
+                                            Create Playlist
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="liked">
+                                    <button class="liked-btn playlist-btn">
+                                        <div class="like-icon">
+                                            <svg role="img" height="12" width="12" aria-hidden="true"
+                                                viewBox="0 0 16 16" data-encore-id="icon" class="heart-icon icon-color">
+                                                <path
+                                                    d="M15.724 4.22A4.313 4.313 0 0 0 12.192.814a4.269 4.269 0 0 0-3.622 1.13.837.837 0 0 1-1.14 0 4.272 4.272 0 0 0-6.21 5.855l5.916 7.05a1.128 1.128 0 0 0 1.727 0l5.916-7.05a4.228 4.228 0 0 0 .945-3.577z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <span class="item-name panel-2-names">
+                                            Liked Songs
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panelFooter">
+                            <div class="bottomLinks-container">
+                                <div class="bottomLinks link1">
+                                    <a href="#">Legal</a>
+                                </div>
+                                <div class="bottomLinks link2">
+                                    <a href="#">Privacy Center</a>
+                                </div>
+                                <div class="bottomLinks link3">
+                                    <a href="#">Privacy Policy</a>
+                                </div>
+                                <div class="bottomLinks link4">
+                                    <a href="#">Cookies</a>
+                                </div>
+                                <div class="bottomLinks link5">
+                                    <a href="#">About Ads</a>
+                                </div>
+                                <div class="bottomLinks link6">
+                                    <a href="#">Accessibility</a>
+                                </div>
+                                <a href="#" style="margin-top: -4px;">Cookies</a>
+                            </div>
+
+                            <div class="language">
+                                <button class="eng">
+                                    <span class="lang-icon-container">
+                                        <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+                                            data-encore-id="icon" class="lang-icon">
+                                            <path
+                                                d="M8.152 16H8a8 8 0 1 1 .152 0zm-.41-14.202c-.226.273-.463.713-.677 1.323-.369 1.055-.626 2.496-.687 4.129h3.547c-.06-1.633-.318-3.074-.687-4.129-.213-.61-.45-1.05-.676-1.323-.194-.235-.326-.285-.385-.296h-.044c-.055.007-.19.052-.391.296zM4.877 7.25c.062-1.771.34-3.386.773-4.624.099-.284.208-.554.329-.806a6.507 6.507 0 0 0-4.436 5.43h3.334zm-3.334 1.5a6.507 6.507 0 0 0 4.436 5.43 7.974 7.974 0 0 1-.33-.806c-.433-1.238-.71-2.853-.772-4.624H1.543zm4.835 0c.061 1.633.318 3.074.687 4.129.214.61.451 1.05.677 1.323.202.244.336.29.391.297l.044-.001c.06-.01.19-.061.385-.296.226-.273.463-.713.676-1.323.37-1.055.626-2.496.687-4.129H6.378zm5.048 0c-.061 1.771-.339 3.386-.772 4.624-.082.235-.171.46-.268.674a6.506 6.506 0 0 0 4.071-5.298h-3.03zm3.031-1.5a6.507 6.507 0 0 0-4.071-5.298c.097.214.186.44.268.674.433 1.238.711 2.853.772 4.624h3.031z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    English
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ******************NavBar********************** -->
+        <div class="nav-wrapper">
+            <div class="nav-container" id="nav-bar-id">
+                <div class="nav-bar ">
+                    <div class="prev-for-btn-container">
+                        <button class="prev-btn">
+                            <svg role="img" height="16" width="16" aria-hidden="true"
+                                class="Svg-sc-ytk21e-0 leya-dW IYDlXmBmmUKHveMzIPCF" viewBox="0 0 16 16"
+                                data-encore-id="icon" style="">
+                                <path
+                                    d="M11.03.47a.75.75 0 0 1 0 1.06L4.56 8l6.47 6.47a.75.75 0 1 1-1.06 1.06L2.44 8 9.97.47a.75.75 0 0 1 1.06 0z">
+                                </path>
+                            </svg>
+                        </button>
+
+                        <button class="for-btn">
+                            <svg role="img" height="16" width="16" aria-hidden="true"
+                                class="Svg-sc-ytk21e-0 leya-dW IYDlXmBmmUKHveMzIPCF" viewBox="0 0 16 16"
+                                data-encore-id="icon" style="">
+                                <path
+                                    d="M4.97.47a.75.75 0 0 0 0 1.06L11.44 8l-6.47 6.47a.75.75 0 1 0 1.06 1.06L13.56 8 6.03.47a.75.75 0 0 0-1.06 0z"
+                                    style=""></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="nav-ele">
+                        <ul>
+                            <li class="nav-links left-links"><button>Premium</button></li>
+                            <li class="nav-links left-links"><button>Support</button></li>
+                            <li class="nav-links left-links"><button>Download</button></li>
+                            <li>
+                                <div class="bar left-links"></div>
+                            </li>
+                            <li class="nav-links signin-btn"><button>Sign up</button></li>
+                            <li class="login-btn nav-links"><button>Log in</button></li>
+                            <li class="nav-collapse-container">
+                                <div class="nav-collapse">
+                                    <svg onclick="openDropDown(); toggleIcons()" role="img" height="16" width="16"
+                                        aria-hidden="true" viewBox="0 0 16 16" class="nav-open-icon" id="open-icon">
+                                        <path fill="#FFF"
+                                            d="M15.5 13.5H.5V12h15v1.5zm0-4.75H.5v-1.5h15v1.5zm0-4.75H.5V2.5h15V4z">
+                                        </path>
+                                    </svg>
+
+                                    <svg onclick="toggleIcons(); closeDropDown()" role="img" height="16" width="16"
+                                        aria-hidden="true" viewBox="0 0 16 16" style="display: none;"
+                                        class="nav-collapse-icon" id="collapse-icon">
+                                        <path fill="#FFF"
+                                            d="M1.47 1.47a.75.75 0 0 1 1.06 0L8 6.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L9.06 8l5.47 5.47a.75.75 0 1 1-1.06 1.06L8 9.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L6.94 8 1.47 2.53a.75.75 0 0 1 0-1.06z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="on-click-nav-collapse" id="onClickNavId">
+                                    <ul>
+                                        <div class="collapse-items">
+                                            <li>
+                                                <span>Premium</span>
+                                                <svg role="img" height="16" width="16" aria-hidden="true"
+                                                    aria-label="External link" viewBox="0 0 16 16" data-encore-id="icon"
+                                                    class="link-icon">
+                                                    <path
+                                                        d="M1 2.75A.75.75 0 0 1 1.75 2H7v1.5H2.5v11h10.219V9h1.5v6.25a.75.75 0 0 1-.75.75H1.75a.75.75 0 0 1-.75-.75V2.75z">
+                                                    </path>
+                                                    <path
+                                                        d="M15 1v4.993a.75.75 0 1 1-1.5 0V3.56L8.78 8.28a.75.75 0 0 1-1.06-1.06l4.72-4.72h-2.433a.75.75 0 0 1 0-1.5H15z">
+                                                    </path>
+                                                </svg>
+                                            </li>
+                                        </div>
+                                        <div class="collapse-items">
+                                            <li>
+                                                <span>Support</span>
+                                                <svg role="img" height="16" width="16" aria-hidden="true"
+                                                    aria-label="External link" viewBox="0 0 16 16" data-encore-id="icon"
+                                                    class="link-icon">
+                                                    <path
+                                                        d="M1 2.75A.75.75 0 0 1 1.75 2H7v1.5H2.5v11h10.219V9h1.5v6.25a.75.75 0 0 1-.75.75H1.75a.75.75 0 0 1-.75-.75V2.75z">
+                                                    </path>
+                                                    <path
+                                                        d="M15 1v4.993a.75.75 0 1 1-1.5 0V3.56L8.78 8.28a.75.75 0 0 1-1.06-1.06l4.72-4.72h-2.433a.75.75 0 0 1 0-1.5H15z">
+                                                    </path>
+                                                </svg>
+                                            </li>
+                                        </div>
+                                        <div class="collapse-items">
+                                            <li>
+                                                <span>Download</span>
+                                                <svg role="img" height="16" width="16" aria-hidden="true"
+                                                    aria-label="External link" viewBox="0 0 16 16" data-encore-id="icon"
+                                                    class="link-icon">
+                                                    <path
+                                                        d="M1 2.75A.75.75 0 0 1 1.75 2H7v1.5H2.5v11h10.219V9h1.5v6.25a.75.75 0 0 1-.75.75H1.75a.75.75 0 0 1-.75-.75V2.75z">
+                                                    </path>
+                                                    <path
+                                                        d="M15 1v4.993a.75.75 0 1 1-1.5 0V3.56L8.78 8.28a.75.75 0 0 1-1.06-1.06l4.72-4.72h-2.433a.75.75 0 0 1 0-1.5H15z">
+                                                    </path>
+                                                </svg>
+                                            </li>
+                                        </div>
+                                    </ul>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ****************** CARD CONTAINER ************* -->
+        <div class="scrollbar content-box-container" id="style-5">
+            <div class="force-overflow"></div>
+            <main>
+                <div class="content-spacing">
+                    <section class="shelf">
+                        <div class="section-heading">
+                            <div class="heading">
+                                <a href="#">Focus</a>
+                            </div>
+                            <div class="show-more-btn">
+                                <a href="#">Show all</a>
+                            </div>
+                        </div>
+
+                        <div class="section-card-container">
+                            <div class="card" id="card1" draggable="false">
+                                <div class="card-img-container">
+                                    <div class="card-img-sec-container">
+                                        <img loading="lazy" src="assets/card1.jpg" class="card-image" alt="">
+                                    </div>
+                                </div>
+                                <div class="play-btn-container">
+                                    <div class="play-btn">
+                                        <button>
+                                            <span>
+                                                <svg role="img" height="24" width="24" aria-hidden="true"
+                                                    viewBox="0 0 24 24" data-encore-id="icon">
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-title-desc">
+                                    <a title="Peaceful Piano" href="#">
+                                        <div class="cardTitle">Peaceful Piano</div>
+                                    </a>
+                                    <div class="cardDesc">
+                                        Peaceful piano to help you slow down, breathe, and
+                                        relax.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" id="card2" draggable="false">
+                                <div class="card-img-container">
+                                    <div class="card-img-sec-container">
+                                        <img loading="lazy" src="assets/card2.jpg" class="card-image" alt="">
+                                    </div>
+                                </div>
+                                <div class="play-btn-container">
+                                    <div class="play-btn">
+                                        <button>
+                                            <span>
+                                                <svg role="img" height="24" width="24" aria-hidden="true"
+                                                    viewBox="0 0 24 24" data-encore-id="icon">
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-title-desc">
+                                    <a title="Peaceful Piano" href="#">
+                                        <div class="cardTitle">Peaceful Piano</div>
+                                    </a>
+                                    <div class="cardDesc">
+                                        Peaceful piano to help you slow down, breathe, and
+                                        relax.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" id="card3" draggable="false">
+                                <div class="card-img-container">
+                                    <div class="card-img-sec-container">
+                                        <img loading="lazy" src="assets/card3.jpg" class="card-image" alt="">
+                                    </div>
+                                </div>
+                                <div class="play-btn-container">
+                                    <div class="play-btn">
+                                        <button>
+                                            <span>
+                                                <svg role="img" height="24" width="24" aria-hidden="true"
+                                                    viewBox="0 0 24 24" data-encore-id="icon">
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-title-desc">
+                                    <a title="Peaceful Piano" href="#">
+                                        <div class="cardTitle">Peaceful Piano</div>
+                                    </a>
+                                    <div class="cardDesc">
+                                        Peaceful piano to help you slow down, breathe, and
+                                        relax.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" id="card4" draggable="false">
+                                <div class="card-img-container">
+                                    <div class="card-img-sec-container">
+                                        <img loading="lazy" src="assets/card5.jpg" class="card-image" alt="">
+                                    </div>
+                                </div>
+                                <div class="play-btn-container">
+                                    <div class="play-btn">
+                                        <button>
+                                            <span>
+                                                <svg role="img" height="24" width="24" aria-hidden="true"
+                                                    viewBox="0 0 24 24" data-encore-id="icon">
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-title-desc">
+                                    <a title="Peaceful Piano" href="#">
+                                        <div class="cardTitle">Peaceful Piano</div>
+                                    </a>
+                                    <div class="cardDesc">
+                                        Peaceful piano to help you slow down, breathe, and
+                                        relax.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" id="card5" draggable="false">
+                                <div class="card-img-container">
+                                    <div class="card-img-sec-container">
+                                        <img loading="lazy" src="assets/card4.jpg" class="card-image" alt="">
+                                    </div>
+                                </div>
+                                <div class="play-btn-container">
+                                    <div class="play-btn">
+                                        <button>
+                                            <span>
+                                                <svg role="img" height="24" width="24" aria-hidden="true"
+                                                    viewBox="0 0 24 24" data-encore-id="icon">
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-title-desc">
+                                    <a title="Peaceful Piano" href="#">
+                                        <div class="cardTitle">Peaceful Piano</div>
+                                    </a>
+                                    <div class="cardDesc">
+                                        Peaceful piano to help you slow down, breathe, and
+                                        relax.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="shelf">
+                        <div class="section-heading">
+                            <div class="heading">
+                                <a href="#">Spotify Playlists</a>
+                            </div>
+                            <div class="show-more-btn">
+                                <a href="#">Show all</a>
+                            </div>
+                        </div>
+
+                        <div class="section-card-container">
+                            <div class="card" id="card1" draggable="false">
+                                <div class="card-img-container">
+                                    <div class="card-img-sec-container">
+                                        <img loading="lazy" src="assets/card1.jpg" class="card-image" alt="">
+                                    </div>
+                                </div>
+                                <div class="play-btn-container">
+                                    <div class="play-btn">
+                                        <button>
+                                            <span>
+                                                <svg role="img" height="24" width="24" aria-hidden="true"
+                                                    viewBox="0 0 24 24" data-encore-id="icon">
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-title-desc">
+                                    <a title="Peaceful Piano" href="#">
+                                        <div class="cardTitle">Peaceful Piano</div>
+                                    </a>
+                                    <div class="cardDesc">
+                                        Peaceful piano to help you slow down, breathe, and
+                                        relax.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" id="card2" draggable="false">
+                                <div class="card-img-container">
+                                    <div class="card-img-sec-container">
+                                        <img loading="lazy" src="assets/card2.jpg" class="card-image" alt="">
+                                    </div>
+                                </div>
+                                <div class="play-btn-container">
+                                    <div class="play-btn">
+                                        <button>
+                                            <span>
+                                                <svg role="img" height="24" width="24" aria-hidden="true"
+                                                    viewBox="0 0 24 24" data-encore-id="icon">
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-title-desc">
+                                    <a title="Peaceful Piano" href="#">
+                                        <div class="cardTitle">Peaceful Piano</div>
+                                    </a>
+                                    <div class="cardDesc">
+                                        Peaceful piano to help you slow down, breathe, and
+                                        relax.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" id="card3" draggable="false">
+                                <div class="card-img-container">
+                                    <div class="card-img-sec-container">
+                                        <img loading="lazy" src="assets/card3.jpg" class="card-image" alt="">
+                                    </div>
+                                </div>
+                                <div class="play-btn-container">
+                                    <div class="play-btn">
+                                        <button>
+                                            <span>
+                                                <svg role="img" height="24" width="24" aria-hidden="true"
+                                                    viewBox="0 0 24 24" data-encore-id="icon">
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-title-desc">
+                                    <a title="Peaceful Piano" href="#">
+                                        <div class="cardTitle">Peaceful Piano</div>
+                                    </a>
+                                    <div class="cardDesc">
+                                        Peaceful piano to help you slow down, breathe, and
+                                        relax.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" id="card4" draggable="false">
+                                <div class="card-img-container">
+                                    <div class="card-img-sec-container">
+                                        <img loading="lazy" src="assets/card5.jpg" class="card-image" alt="">
+                                    </div>
+                                </div>
+                                <div class="play-btn-container">
+                                    <div class="play-btn">
+                                        <button>
+                                            <span>
+                                                <svg role="img" height="24" width="24" aria-hidden="true"
+                                                    viewBox="0 0 24 24" data-encore-id="icon">
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-title-desc">
+                                    <a title="Peaceful Piano" href="#">
+                                        <div class="cardTitle">Peaceful Piano</div>
+                                    </a>
+                                    <div class="cardDesc">
+                                        Peaceful piano to help you slow down, breathe, and
+                                        relax.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" id="card5" draggable="false">
+                                <div class="card-img-container">
+                                    <div class="card-img-sec-container">
+                                        <img loading="lazy" src="assets/card4.jpg" class="card-image" alt="">
+                                    </div>
+                                </div>
+                                <div class="play-btn-container">
+                                    <div class="play-btn">
+                                        <button>
+                                            <span>
+                                                <svg role="img" height="24" width="24" aria-hidden="true"
+                                                    viewBox="0 0 24 24" data-encore-id="icon">
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-title-desc">
+                                    <a title="Peaceful Piano" href="#">
+                                        <div class="cardTitle">Peaceful Piano</div>
+                                    </a>
+                                    <div class="cardDesc">
+                                        Peaceful piano to help you slow down, breathe, and
+                                        relax.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="shelf">
+                        <div class="section-heading">
+                            <div class="heading">
+                                <a href="#">Sound of India</a>
+                            </div>
+                            <div class="show-more-btn">
+                                <a href="#">Show all</a>
+                            </div>
+                        </div>
+
+                        <div class="section-card-container">
+                            <div class="card" id="card1" draggable="false">
+                                <div class="card-img-container">
+                                    <div class="card-img-sec-container">
+                                        <img loading="lazy" src="assets/card1.jpg" class="card-image" alt="">
+                                    </div>
+                                </div>
+                                <div class="play-btn-container">
+                                    <div class="play-btn">
+                                        <button>
+                                            <span>
+                                                <svg role="img" height="24" width="24" aria-hidden="true"
+                                                    viewBox="0 0 24 24" data-encore-id="icon">
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-title-desc">
+                                    <a title="Peaceful Piano" href="#">
+                                        <div class="cardTitle">Peaceful Piano</div>
+                                    </a>
+                                    <div class="cardDesc">
+                                        Peaceful piano to help you slow down, breathe, and
+                                        relax.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" id="card2" draggable="false">
+                                <div class="card-img-container">
+                                    <div class="card-img-sec-container">
+                                        <img loading="lazy" src="assets/card2.jpg" class="card-image" alt="">
+                                    </div>
+                                </div>
+                                <div class="play-btn-container">
+                                    <div class="play-btn">
+                                        <button>
+                                            <span>
+                                                <svg role="img" height="24" width="24" aria-hidden="true"
+                                                    viewBox="0 0 24 24" data-encore-id="icon">
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-title-desc">
+                                    <a title="Peaceful Piano" href="#">
+                                        <div class="cardTitle">Peaceful Piano</div>
+                                    </a>
+                                    <div class="cardDesc">
+                                        Peaceful piano to help you slow down, breathe, and
+                                        relax.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" id="card3" draggable="false">
+                                <div class="card-img-container">
+                                    <div class="card-img-sec-container">
+                                        <img loading="lazy" src="assets/card3.jpg" class="card-image" alt="">
+                                    </div>
+                                </div>
+                                <div class="play-btn-container">
+                                    <div class="play-btn">
+                                        <button>
+                                            <span>
+                                                <svg role="img" height="24" width="24" aria-hidden="true"
+                                                    viewBox="0 0 24 24" data-encore-id="icon">
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-title-desc">
+                                    <a title="Peaceful Piano" href="#">
+                                        <div class="cardTitle">Peaceful Piano</div>
+                                    </a>
+                                    <div class="cardDesc">
+                                        Peaceful piano to help you slow down, breathe, and
+                                        relax.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" id="card4" draggable="false">
+                                <div class="card-img-container">
+                                    <div class="card-img-sec-container">
+                                        <img loading="lazy" src="assets/card5.jpg" class="card-image" alt="">
+                                    </div>
+                                </div>
+                                <div class="play-btn-container">
+                                    <div class="play-btn">
+                                        <button>
+                                            <span>
+                                                <svg role="img" height="24" width="24" aria-hidden="true"
+                                                    viewBox="0 0 24 24" data-encore-id="icon">
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-title-desc">
+                                    <a title="Peaceful Piano" href="#">
+                                        <div class="cardTitle">Peaceful Piano</div>
+                                    </a>
+                                    <div class="cardDesc">
+                                        Peaceful piano to help you slow down, breathe, and
+                                        relax.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" id="card5" draggable="false">
+                                <div class="card-img-container">
+                                    <div class="card-img-sec-container">
+                                        <img loading="lazy" src="assets/card4.jpg" class="card-image" alt="">
+                                    </div>
+                                </div>
+                                <div class="play-btn-container">
+                                    <div class="play-btn">
+                                        <button>
+                                            <span>
+                                                <svg role="img" height="24" width="24" aria-hidden="true"
+                                                    viewBox="0 0 24 24" data-encore-id="icon">
+                                                    <path
+                                                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-title-desc">
+                                    <a title="Peaceful Piano" href="#">
+                                        <div class="cardTitle">Peaceful Piano</div>
+                                    </a>
+                                    <div class="cardDesc">
+                                        Peaceful piano to help you slow down, breathe, and
+                                        relax.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <footer>
+                <div class="footer-styling">
+                    <div class="footer-links-container">
+                        <div class="footer-links" id="col1">
+                            <p>Company</p>
+                            <a href="#">About</a>
+                            <a href="#">Jobs</a>
+                            <a href="#">For the Recore</a>
+                        </div>
+
+                        <div class="footer-links" id="col2">
+                            <p>Communities</p>
+                            <a href="#">For Artists</a>
+                            <a href="#">Developers</a>
+                            <a href="#">Advertising</a>
+                            <a href="#">Investors</a>
+                            <a href="#">Vendors</a>
+                            <a href="#">Spotify for Work</a>
+                        </div>
+
+                        <div class="footer-links" id="col3">
+                            <p>Useful links</p>
+                            <a href="#">Support</a>
+                            <a href="#">Free Mobile App</a>
+                        </div>
+                    </div>
+                    <div class="footer-socials-link-container">
+                        <div class="social-links">
+                            <a href="#">
+                                <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+                                    data-encore-id="icon" class="insta-icon">
+                                    <path fill="#FFF"
+                                        d="M8 1.44c2.136 0 2.389.009 3.233.047.78.036 1.203.166 1.485.276.348.128.663.332.921.598.266.258.47.573.599.921.11.282.24.706.275 1.485.039.844.047 1.097.047 3.233s-.008 2.389-.047 3.232c-.035.78-.166 1.204-.275 1.486a2.654 2.654 0 01-1.518 1.518c-.282.11-.706.24-1.486.275-.843.039-1.097.047-3.233.047s-2.39-.008-3.232-.047c-.78-.035-1.204-.165-1.486-.275a2.477 2.477 0 01-.921-.599 2.477 2.477 0 01-.599-.92c-.11-.282-.24-.706-.275-1.486-.038-.844-.047-1.096-.047-3.232s.009-2.39.047-3.233c.036-.78.166-1.203.275-1.485.129-.348.333-.663.599-.921a2.49 2.49 0 01.92-.599c.283-.11.707-.24 1.487-.275.843-.038 1.096-.047 3.232-.047L8 1.441zm.001-1.442c-2.172 0-2.445.01-3.298.048-.854.04-1.435.176-1.943.373a3.928 3.928 0 00-1.417.923c-.407.4-.722.883-.923 1.417-.198.508-.333 1.09-.372 1.942C.01 5.552 0 5.826 0 8c0 2.172.01 2.445.048 3.298.04.853.174 1.433.372 1.941.2.534.516 1.017.923 1.417.4.407.883.722 1.417.923.508.198 1.09.333 1.942.372.852.039 1.126.048 3.299.048 2.172 0 2.445-.01 3.298-.048.853-.04 1.433-.174 1.94-.372a4.087 4.087 0 002.34-2.34c.199-.508.334-1.09.373-1.942.039-.851.048-1.125.048-3.298s-.01-2.445-.048-3.298c-.04-.853-.174-1.433-.372-1.94a3.924 3.924 0 00-.923-1.418A3.928 3.928 0 0013.24.42c-.508-.197-1.09-.333-1.942-.371-.851-.041-1.125-.05-3.298-.05l.001-.001z">
+                                    </path>
+                                    <path fill="#FFF"
+                                        d="M8 3.892a4.108 4.108 0 100 8.216 4.108 4.108 0 000-8.216zm0 6.775a2.668 2.668 0 110-5.335 2.668 2.668 0 010 5.335zm4.27-5.978a.96.96 0 100-1.92.96.96 0 000 1.92z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="#">
+                                <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+                                    data-encore-id="icon" class="twitter-icon">
+                                    <path fill="#FFF"
+                                        d="M13.54 3.889a2.968 2.968 0 001.333-1.683 5.937 5.937 0 01-1.929.738 2.992 2.992 0 00-.996-.706 2.98 2.98 0 00-1.218-.254 2.92 2.92 0 00-2.143.889 2.929 2.929 0 00-.889 2.15c0 .212.027.442.08.691a8.475 8.475 0 01-3.484-.932A8.536 8.536 0 011.532 2.54a2.993 2.993 0 00-.413 1.523c0 .519.12 1 .361 1.445.24.445.57.805.988 1.08a2.873 2.873 0 01-1.373-.374v.04c0 .725.23 1.365.69 1.92a2.97 2.97 0 001.739 1.048 2.937 2.937 0 01-1.365.056 2.94 2.94 0 001.063 1.5 2.945 2.945 0 001.77.603 5.944 5.944 0 01-3.77 1.302c-.243 0-.484-.016-.722-.048A8.414 8.414 0 005.15 14c.905 0 1.763-.12 2.572-.361.81-.24 1.526-.57 2.147-.988a9.044 9.044 0 001.683-1.46c.5-.556.911-1.155 1.234-1.798a9.532 9.532 0 00.738-1.988 8.417 8.417 0 00.246-2.429 6.177 6.177 0 001.508-1.563c-.56.249-1.14.407-1.738.476z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="#">
+                                <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+                                    data-encore-id="icon" class="facebook-icon">
+                                    <path fill="#FFFFFF"
+                                        d="M16 8a8 8 0 10-9.25 7.903v-5.59H4.719V8H6.75V6.237c0-2.005 1.194-3.112 3.022-3.112.875 0 1.79.156 1.79.156V5.25h-1.008c-.994 0-1.304.617-1.304 1.25V8h2.219l-.355 2.313H9.25v5.59A8.002 8.002 0 0016 8z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <hr class="line-break">
+                <div class="last-copy-container">
+                    <div class="copyright">
+                        <span>
+                            <p>© 2023 Spotify AB</p>
+                        </span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
